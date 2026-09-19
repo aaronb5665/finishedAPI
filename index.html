@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <script src="movie.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE SEARCHER</title>
+</head>
+<body>
+    <section id="landing">
+        <nav class="nav__section">
+            <img src="" alt="">
+            <div class="nav__container">
+                <ul class="nav__links">
+                    <li href="#" class="nav__link"><search>search</search></li>
+                    <li href="#" class="nav__link">movies</li>
+                    <li href="#" class="nav__link">locations</li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <h1>
+                THIS IS YOUR PRIMIERE SEARCH SITE FOR WHAT YOU NEED.
+            </h1>
+            <form id="search-form" method="GET">
+                <input type="search" name="query" placeholder="Search movies..." aria-label="Search">
+                <button id="submitButton" type="submit">Search Movies</button>
+            </form>
+        </header>
+    </section>
+    <main id="search__main">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <h2 class="search__title">
+                        Search Results:
+                    </h2>
+                    <select id="filter" onchange="filterMovies(event)">
+                        <option value="disable selected">Sort</option>
+                        <option value="A to Z">A to Z</option>
+                        <option value="Z to A">Z to A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="movies">
+                <div class="movie">
+                    <span class="movieCard"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="row row__column">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

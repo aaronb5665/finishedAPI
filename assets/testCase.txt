@@ -1,0 +1,60 @@
+o separate the fetch logic into its own function, create a dedicated function (e.g., fetchMovies) that handles the API request and returns the parsed JSON data, then call it inside your event listener before passing the results to renderMovies.
+
+Here is the updated, clean structure:
+
+JavaScript
+const movieList = document.querySelector(".movieCard");
+const searchInput = document.getElementById('search-form');
+const apiKey = '2e325618';
+
+// 1. Separate Fetch Function
+async function fetchMovies(query) {
+    try {
+        const response = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching movie data:", error);
+        return null;
+    }
+}
+
+// 2. Render Function (renamed from getMovies for clarity)
+function renderMovies(movieData) {
+    if (!movieData || !movieData.Search) {
+        movieList.innerHTML = `<p>No movies found.</p>`;
+        return;
+    }
+
+    movieList.innerHTML = movieData.Search.map(
+        (movie) => `<div class="movieResults">
+            <figure class="movie__img--wrapper">
+                ${movie.Poster !== 'N/A' ? `<img class="movie__img" src="${movie.Poster}" alt="${movie.Title}">` : ''}
+            </figure>
+            <div class="movie__title">
+                <h3>Title: ${movie.Title}</h3>
+            </div>
+            <div class="movie__year">
+                <h3>Year: ${movie.Year}</h3>
+            </div>            
+        </div>`
+    ).join("");
+}
+
+// 3. Event Listener Orchestrating Both
+searchInput.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const searchQuery = searchInput.querySelector('input[name="query"]').value.trim();
+    if (!searchQuery) return;
+
+    const movieData = await fetchMovies(searchQuery);
+    renderMovies(movieData);
+});
+Key Changes
+
+fetchMovies: Handles fetching and converting to JSON (await response.json()), making it reusable.
+
+renderMovies: Handles DOM updates synchronously (removed async since no await is inside it).
+
+Cleaner Scope: Your event listener acts as a controller, calling the fetch function first and then passing the resolved data to the rendering function.

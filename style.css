@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    padding: 16px;
+    margin: 16px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 100%;
+    height: auto;
+    padding: 56px;
+}
+
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto;
+}
+/* this will handle the shape of the submit button */
+#submitButton {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-radius: 16px;
+    background-color: #577aa0;
+    color: white;
+    cursor: pointer;
+}
+/* this will handle the shape of the search field */
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin: 4px;
+    display: block;
+    border: 5px solid #ccc;
+    border-radius: 132px;
+}
+
+/*
+
+NAVIGATION
+
+*/
+
+.nav__section {
+    background-image: url(./assets/akiko-taniguchi-8DIlLbDLpVU-unsplash.jpg); 
+    /* this background will show if the image does not load */
+    background-color: lightgrey;
+    background-size: 100%;
+    /* the background-position centers the image and moves it down -155px */
+    background-position: center -155px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    padding: 16px;
+    margin: 16px;
+}
+
+.nav__container {
+    width: 100%;
+    max-width: 1700px;
+    padding: 16px;
+    margin: 16px;
+}
+
+.nav__links {
+    justify-content: right;
+    margin: 8px;
+    padding: 16px;
+}
+
+.nav__link {
+    padding: 8px;
+}
+
+/*
+
+MAIN
+
+*/
+#search__main {
+    padding: 16px;
+    margin: 16px;
+}
+.search__title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 16px;
+    font-size: 24px;
+}
+
+/* 
+
+MOVIE RESULTS
+
+*/
+
+.movie {
+    width: 100%;
+}
+
+.movieCard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* this positions the items on the page */
+.movieResults {
+    width: 25%;
+    padding: 16px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.movie__title {
+    width: 60%;
+    font-size: 12px;
+}
+
+.movie__year {
+    width: 50%;
+    font-size: 12px;
+}
+.movie__img {
+    max-height: 250px;
+    transition: all 300ms ease;
+    cursor: not-allowed;
+}
+
+/* 
+
+RESIZING FOR SMALL PHONES AND TABLETS
+
+*/
+
+@media (max-width: 768px) {
+    h1 {
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .movieCard {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 480px) {
+
+    /* ul {
+        display: flex;
+        
+    } */
+    #search__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* justify-content: center; */
+    }
+
+    #search-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .search__title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .movieResults {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .movie__title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .movie__year {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav__section {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 150px;
+    }
+
+    .nav__section {
+        display: flex;
+        flex-direction: flex-start;
+
+    }
+
+    
+}
