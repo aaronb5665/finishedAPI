@@ -61,7 +61,7 @@ NAVIGATION
 */
 
 .nav__section {
-    background-image: url(./assets/akiko-taniguchi-8DIlLbDLpVU-unsplash.jpg); 
+    background-image: url(./assets/moviebackground.jpg); 
     /* this background will show if the image does not load */
     background-color: lightgrey;
     background-size: 100%;
