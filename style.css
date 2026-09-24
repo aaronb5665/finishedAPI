@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
 
 * {
+    max-width: 1200px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -41,6 +42,11 @@ li {
     color: white;
     cursor: pointer;
 }
+
+#filter {
+    cursor: pointer;
+}
+
 /* this will handle the shape of the search field */
 input {
     width: 100%;
@@ -64,6 +70,7 @@ NAVIGATION
     background-color: lightgrey;
     background-size: 100%;
     /* the background-position centers the image and moves it down -155px */
+    max-width: 1200px;
     background-position: center -155px;
     background-repeat: no-repeat;
     width: 100%;
@@ -74,7 +81,7 @@ NAVIGATION
 
 .nav__container {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1200px;
     padding: 16px;
     margin: 16px;
 }
@@ -88,6 +95,46 @@ NAVIGATION
 .nav__link {
     padding: 8px;
 }
+
+/* 
+
+BACKGROUND MENU
+
+*/
+
+button {
+    cursor: pointer;
+}
+
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;    /* this will increase the size of the image for fontawsome */
+    border: none;
+    /* display: none; */
+}
+
+/* .menu__backdrop {
+    position: absolute;
+    background-color: rgb(99, 93, 57);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center; */
+    /* visibility: hidden;
+    transition: all 300ms ease;
+    opacity: 0;
+    transform: translate(100%); */
+}
+
+.btn__menu {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+
 
 /*
 
@@ -208,6 +255,9 @@ RESIZING FOR SMALL PHONES AND TABLETS
 }
 
 @media (max-width: 480px) {
+    .btn__menu {
+        display: block; /* this will allow the icons to show at the smaller screen size */
+    }
 
     #search__main {
         display: flex;

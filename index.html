@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
     <script src="movie.js" defer></script>
+    <script src="https://kit.fontawesome.com/c29aec6c69.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOVIE SEARCHER</title>
@@ -14,10 +15,27 @@
             <img src="" alt="">
             <div class="nav__container">
                 <ul class="nav__links">
-                    <li href="#" class="nav__link"><search>search</search></li>
-                    <li href="#" class="nav__link">movies</li>
-                    <li href="#" class="nav__link">locations</li>
+                    <!-- <li href="#" class="nav__link"><search>search</search></li> -->
+                    <li><a href="#" class="nav__link">Movies</a></li>
+                    <li><a href="#" class="nav__link">Locations</a></li>
                 </ul>
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fa-solid fa-clapperboard"></i>
+                </button>
+                <div class="menu__backdrop">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                        <i class="fa-brands fa-empire"></i>
+                    </button>
+                    <ul class="menu__links">
+                        <!-- <li href="#" class="menu__list" onclick="closeMenu()"><search>search</search></li> -->
+                        <li class="menu__list">
+                            <a href="#" class="menu__link" onclick="closeMenu()">Current Movies</a>
+                        </li>
+                        <li class="menu__list">
+                            <a href="#" class="menu__link" onclick="closeMenu()">Locations</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <header>
